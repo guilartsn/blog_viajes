@@ -40,15 +40,50 @@ a {
     font-size: 1.8rem;
 }
 
+
+/** Navegacion Responsive **/
+
+.barra {
+    overflow: hidden;
+}
+
+.mobile-menu {
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+}
+
+.navegacion-principal {
+    max-height: 0;
+    transition: .5s;
+}
+
+#nav:target {
+    max-height: 800px;
+}
+
+@media (min-width:768px) {
+    .navegacion-principal {
+        max-height: unset;
+    }
+    .mobile-menu,
+    .cerrar {
+        display: none!important;
+    }
+}
+
 .btn {
     display: inline-block;
     background-color: #00B8E4;
-    padding: 1rem 3rem;
+    padding: 1rem 4rem;
     text-decoration: none;
     color: white;
     font-weight: bold;
     margin-top: 1rem;
     text-transform: uppercase;
+    transition: background-color .3s ease-in-out;
 }
 
 .btn:hover {
@@ -71,12 +106,18 @@ a {
     display: block;
 }
 
+.contenedor {
+    margin: 0 auto;
+    width: 90%;
+}
+
 .site-header {
     padding: 2rem 0;
 }
 
 .barra {
     background-color: rgb(223, 37, 158);
+    margin-top: 40px;
 }
 
 
@@ -105,22 +146,27 @@ a {
 
 /** Contenedores principales **/
 
+.contenido-principal {
+    margin-top: 25px;
+}
+
 .contenido-principal,
 .side-bar {
-    padding: 2rem;
+    padding: 10px;
 }
 
 @media (min-width:768px) {
     .contenido-principal {
         width: 70%;
         float: left;
-        padding-right: 3rem;
+        padding-right: 0 60px 0 0;
     }
-}
-
-.side-bar {
-    width: 30%;
-    float: left;
+    .side-bar {
+        width: 30%;
+        float: left;
+        padding: 20px;
+        margin-top: 30px;
+    }
 }
 
 
@@ -131,10 +177,6 @@ h2 {
     margin-bottom: 2.3rem;
 }
 
-.entrada {
-    margin-top: 3.2rem;
-}
-
 .entrada img {
     display: block;
 }
@@ -143,10 +185,92 @@ h2 {
     .entrada img {
         width: 30rem;
         float: left;
-        margin: 0 30px 0 0;
+        margin: 0 3rem 0 0;
     }
+}
+
+.entrada {
+    margin-bottom: 8rem;
+}
+
+.entrada:last-of-type {
+    margin-bottom: 0rem;
 }
 
 .entrada p {
     text-align: justify;
+}
+
+
+/** sidebar **/
+
+.side-bar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 5rem;
+}
+
+.side-bar ul li {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.side-bar ul li:hover {
+    background-color: #00B8E4;
+}
+
+.side-bar ul li a {
+    color: #00B8E4;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.side-bar ul li:hover a {
+    color: #ffffff;
+}
+
+
+/** Footer **/
+
+.footer-sitio {
+    background-color: rgb(223, 37, 158);
+    padding: 2rem;
+    margin-top: 4rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-sitio h2 {
+    color: white;
+}
+
+.footer-sitio a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 22px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.footer-sitio a:last-of-type {
+    margin-right: 0px;
+}
+
+@media (min-width:768px) {
+    .footer-sitio .nosotros {
+        float: left;
+        width: 30%;
+        text-align: left;
+    }
+    .footer-sitio .menu {
+        float: right;
+        width: 50%;
+        text-align: right;
+    }
+}
+
+.copyright {
+    background-color: rgb(204, 28, 142);
+    margin: 50px 0 0 0;
+    padding: 20px 0;
 }
